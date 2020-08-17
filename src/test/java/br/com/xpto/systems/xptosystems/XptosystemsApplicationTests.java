@@ -1,4 +1,4 @@
-package br.com.xpto.systems.xptosystems.xptosystems;
+package br.com.xpto.systems.xptosystems;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
