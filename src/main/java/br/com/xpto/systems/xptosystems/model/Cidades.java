@@ -1,5 +1,6 @@
 package br.com.xpto.systems.xptosystems.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,17 +18,32 @@ public class Cidades implements Serializable {
     private long id;
 
     @NotEmpty
+    @Column(name = "ibge_id")
     private Integer ibgeId;
 
     @NotEmpty
+    @Column(name = "uf")
     private String uf;
+
+    @Column(name = "capital")
     private Boolean capital;
-    
+
+    @Column(name = "lon")
     private Double longitude;
+
+    @Column(name = "lat")
     private Double latitude;
+
+    @Column(name = "no_accents")
     private String noAccents;
+
+    @Column(name = "alternative_names")
     private String alternativeNames;
+
+    @Column(name = "microregion")
     private String microRegion;
+
+    @Column(name = "mesoregion")
     private String mesoRegion;
 
 
