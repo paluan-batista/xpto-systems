@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 public class Cidades implements Serializable {
@@ -14,8 +15,8 @@ public class Cidades implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID uuid;
 
     @NotEmpty
     @Column(name = "ibge_id")
@@ -45,6 +46,22 @@ public class Cidades implements Serializable {
 
     @Column(name = "mesoregion")
     private String mesoRegion;
+
+
+    public Cidades() {
+    }
+
+    public Cidades(int ibge_id, String uf, boolean capital, double lon, double lat, String no_accents, String alternative_names, String microregion, String mesoregion) {
+        this.ibgeId = ibge_id;
+        this.uf = uf;
+        this.capital = capital;
+        this.longitude = lon;
+        this.latitude = lat;
+        this.noAccents = no_accents;
+        this.alternativeNames = alternative_names;
+        this.microRegion = microregion;
+        this.mesoRegion = mesoregion;
+    }
 
 
     public Integer getIbgeId() {
